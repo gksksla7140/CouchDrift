@@ -12,6 +12,8 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },
@@ -22,9 +24,14 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "8.9.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack --mode=production"
   },
   "keywords": [],
   "author": "",
