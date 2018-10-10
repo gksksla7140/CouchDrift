@@ -1,0 +1,2 @@
+class Hosting < ApplicationRecord
+end
