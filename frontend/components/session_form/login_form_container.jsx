@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { deletErrors } from  '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({ errors }) => ({
@@ -19,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
       </button>
     ),
   closeModal: () => dispatch(closeModal()),
-
+  deleteErrors: () => dispatch(deletErrors()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

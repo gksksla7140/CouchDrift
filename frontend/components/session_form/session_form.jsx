@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { deletErrors } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -25,16 +26,14 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors) {
-      return (
-        <ul className='error-list'>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>);
-    }
+    return (
+      <ul className='error-list'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>);
   }
 
   renderUsernameForm() {

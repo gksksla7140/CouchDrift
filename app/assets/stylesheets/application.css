@@ -263,7 +263,7 @@ body {
 .login-form-container {
   border-top: 1px solid;
   border-bottom: 1px solid #e6e6e6;
-  height: 600px;
+  min-height: 600px;
   width: 500px;
   background-color: #ffff;
   border-radius: 8px;
@@ -386,6 +386,28 @@ body {
 
 /* ########################## */
 /* ########################## */
+/* this is error section*/
+
+.error-list {
+  background-color: rgba(198,61,67,0.25);
+  border-radius: 4px;
+  list-style: none;
+  width: 100%;
+
+}
+
+.error-list li {
+  margin: auto;
+  color: #3e1214;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 11.25px 11.25px 13.25px;
+  text-align: center;
+}
+
+
+/* ########################## */
+/* ########################## */
 /* this is why-join section*/
 
 
@@ -456,25 +478,4 @@ body {
 
   margin: 0 0 0.75em 0;
   margin-bottom: 0.5em;
-}
-
-
-/* ########################## */
-/* ########################## */
-/* this is error section*/
-
-.error-list {
-  background-color: rgba(198,61,67,0.25);
-  border-radius: 4px;
-  list-style: none;
-  width: 100%;
-}
-
-.error-list li {
-  margin: auto;
-  color: #3e1214;
-  font-weight: bold;
-  margin-bottom: 1em;
-  padding: 11.25px 11.25px 13.25px;
-  text-align: center;
 }
