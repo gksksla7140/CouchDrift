@@ -28,8 +28,6 @@ const App = () => (
     </div>
     </header>
     <SignUpBackground />
-    <div id='hello'></div>
-
   </div>
 );
 

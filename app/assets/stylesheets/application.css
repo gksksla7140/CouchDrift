@@ -85,8 +85,8 @@ body {
 #signup-nav:hover {
   background-color: #206592;
   cursor: pointer;
-  transition: all 3s ease;
-  -webkit-transition: all .3s ease;
+
+
 }
 
 #login-nav {
@@ -242,6 +242,7 @@ body {
 /* ########################## */
 /* ########################## */
 /* this is modal section*/
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -269,4 +270,211 @@ body {
   font-family: Lato, sans-serif;
   font-size: 1em;
   line-height: 1.5;
+}
+.modal-title-container {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+  bord
+}
+.modal-title-container h1 {
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  margin: 0 0 0.75em 0;
+  word-break: break-word;
+  color: #34495E;
+  width: 400px;
+  font-size: 20px;
+  margin: auto;
+}
+.modal-title-container button {
+  color: #afb7c3;
+  font-size: 180%;
+  margin:auto;
+  background-color: #ffff;
+  border: none;
+  cursor:pointer;
+
+}
+
+.login-form {
+
+}
+
+.login-form-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.login-input {
+
+  background-color: #ffff;
+  border-radius: 4px;
+  padding: 12px 8px;
+  box-shadow: none;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  width: 440px;
+  overflow: visible;
+  margin-bottom: 15px;
+  height: 50px;
+  font-size: 16px;
+}
+
+.session-submit {
+  max-width: 100%;
+  width: 100%;
+  background-color: #287FB8;
+  border: 1px solid #287FB8;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  min-width: 6em;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.session-submit:hover {
+  background-color: #206592;
+  cursor: pointer;
+  transition: all 3s ease;
+  -webkit-transition: all .3s ease;
+}
+
+.other-form-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.other-form-container p {
+  color: #34495e;
+  font-size: 1em;
+}
+.other-form-container button {
+  margin: auto;
+  margin-top: 20px;
+  width: 140px;
+  background-color: #ffff;
+  border: 1px solid #287FB8;
+  color: #287FB8;
+  height: 40px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 140px;
+}
+.other-form-container button:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: all 3s ease;
+  -webkit-transition: all .3s ease;
+}
+
+/* ########################## */
+/* ########################## */
+/* this is why-join section*/
+
+
+
+.why-join-container {
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #008ae6;
+}
+
+.why-join-container h2 {
+  color: #fff;
+  font-size: 56px;
+  font-weight: lighter;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+.why-join-container hr {
+  border:none;
+  background-color: #ffff;
+  color: #fff;
+  font-size: 34px;
+  font-weight: lighter;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+  height: 2px;
+  margin-bottom: 1em;
+  width: 50px;
+  overflow: visible;
+}
+
+.why-join-content-container {
+  display: flex;
+  justify-content: center;
+}
+
+.why-join-content {
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #33adff;
+  width: 400px;
+  padding: 10px;
+}
+
+.why-join-content img {
+  margin-bottom: 20px;
+  width: 315px;
+  height: 400px;
+}
+.why-join-content p {
+  margin: 0 0 1em 0;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.why-join-content h3 {
+  color: #fff;
+  line-height: 1.2;
+  font-size: 25px;
+  font-weight: lighter;
+
+  margin: 0 0 0.75em 0;
+  margin-bottom: 0.5em;
+}
+
+
+/* ########################## */
+/* ########################## */
+/* this is error section*/
+
+.error-list {
+  background-color: rgba(198,61,67,0.25);
+  border-radius: 4px;
+  list-style: none;
+  width: 100%;
+}
+
+.error-list li {
+  margin: auto;
+  color: #3e1214;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 11.25px 11.25px 13.25px;
+  text-align: center;
 }

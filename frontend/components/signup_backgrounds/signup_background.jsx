@@ -1,5 +1,8 @@
 import React from 'react';
+import WhyJoinForm from './why_join';
+
 const SignUpBackground = () => (
+  <div>
   <div id='signup-background'>
     <div className='signup-background-content'>
       <h1>Stay With Locals and Meet Travelers</h1>
@@ -14,12 +17,10 @@ const SignUpBackground = () => (
             href='https://www.google.com/'><span className='fa fa-google' > </span>Join with Gmail</a>
         </li>
       </ul>
-
-
-
     </div>
-
   </div>
+  {WhyJoinForm()}
+</div>
 );
 
 export default SignUpBackground;
