@@ -34,6 +34,3 @@ const App = () => (
 );
 
 export default App;
-
-// <AuthRoute exact path="/login" component={LogInFormContainer} />
-// <AuthRoute exact path="/signup" component={SignUpFormContainer} />
