@@ -8,8 +8,13 @@
   max-height: 100%;
   max-width: 120px;
 }
+
+.header-container {
+  height: 63px;
+}
 .header-nav {
-  
+  top:0;
+  position: fixed;
   display: flex;
   justify-content: center;
   background-color: #fff;

@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       username: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -80,19 +81,20 @@ class SessionForm extends React.Component {
     );
   }
 
+  demoLogin() {
+    const user = { email: 'demo@gmail.com', password: 'starwars' };
+    this.props.login(user);
+    this.props.closeModal();
+  }
+
   renderOtherForm() {
-    let user = { email: 'demo@gmail.com', password: 'starwars' };
-    let demoLogin = () => {
-      this.props.closeModal();
-      store.dispatch(login(user));
-    };
 
     if (this.props.formType === 'Join') {
       return (
         <div className='other-form-container'>
         <p>Already a member?</p>
         {this.props.otherForm}
-        <button onClick={demoLogin}
+        <button onClick={this.demoLogin}
           className='demo-button'>DEMO</button>
       </div>
     );
@@ -102,7 +104,7 @@ class SessionForm extends React.Component {
       <div className='other-form-container'>
       <p>Don't have an account?</p>
       {this.props.otherForm}
-      <button onClick={demoLogin}
+      <button onClick={this.demoLogin}
         className='demo-button'>DEMO</button>
     </div>
   );
