@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { deletErrors } from '../../actions/session_actions';
+import { deletErrors, login } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -56,10 +56,16 @@ class SessionForm extends React.Component {
 
   renderModalTitle() {
     if (this.props.formType === 'Join') {
+      let closeSession = (e) => {
+        e.preventDefault();
+        this.props.closeModal();
+        store.dispatch(deletErrors());
+      };
+
       return (
         <div className='modal-title-container'>
           <h1>Join Couchsurfing for free</h1>
-          <button  onClick={this.props.closeModal}>x</button>
+          <button  onClick={closeSession}>x</button>
         </div>
 
       );
@@ -75,11 +81,19 @@ class SessionForm extends React.Component {
   }
 
   renderOtherForm() {
+    let user = { email: 'demo@gmail.com', password: 'starwars' };
+    let demoLogin = () => {
+      this.props.closeModal();
+      store.dispatch(login(user));
+    };
+
     if (this.props.formType === 'Join') {
       return (
         <div className='other-form-container'>
         <p>Already a member?</p>
-        <button onClick={this.props.otherFrom}>Log In</button>
+        {this.props.otherForm}
+        <button onClick={demoLogin}
+          className='demo-button'>DEMO</button>
       </div>
     );
     }
@@ -87,7 +101,9 @@ class SessionForm extends React.Component {
     return (
       <div className='other-form-container'>
       <p>Don't have an account?</p>
-      <button onClick={this.props.otherFrom}>Join</button>
+      {this.props.otherForm}
+      <button onClick={demoLogin}
+        className='demo-button'>DEMO</button>
     </div>
   );
   }
@@ -107,8 +123,8 @@ class SessionForm extends React.Component {
 
     return (
       <div className="login-form-container">
+        {this.renderModalTitle()}
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderModalTitle()}
 
           {this.renderErrors()}
           <div className="login-form">
@@ -132,7 +148,8 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit" type="submit"
+             value={this.props.formType} />
           </div>
 
         </form>

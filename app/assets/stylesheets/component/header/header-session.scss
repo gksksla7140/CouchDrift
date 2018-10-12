@@ -1,0 +1,206 @@
+.login-signup  {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-top: 10px;
+  max-height: 100%;
+  max-width: 120px;
+}
+.header-nav {
+  
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  min-height: 63px;
+
+  width: 100%;
+
+  color: #27374c;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased
+
+}
+
+.header-div {
+  margin: auto;
+  width: 87%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#signup-nav {
+  min-width: 160px;
+  background-color: #287FB8;
+  border: 1px solid #287FB8;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 240px;
+  padding: 8px 12px;
+  text-align: center;
+  padding-right: 10px;
+  margin-right:  10px;
+}
+#signup-nav:hover {
+  background-color: #206592;
+  cursor: pointer;
+
+
+}
+
+#login-nav {
+  border: 1px solid #287FB8;
+  color: #287FB8;
+  border-radius: 3px;
+  min-width: 100px;
+  width: auto;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 240px;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+
+}
+#login-nav:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: all 3s ease;
+  -webkit-transition: all .3s ease;
+}
+
+
+/* ########################## */
+/* ########################## */
+/* this is signup-background section*/
+
+#signup-background {
+  padding: 0px;
+  margin: 0px;
+
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  max-width: none;
+  width: auto;
+  height: 600px;
+  background-size: cover;
+  background-image: url('https://ht-assets.couchsurfing.com/assets/homepage/have-fun-with-couchsurfing-0c56538cda235c5806dc956559fe942179937b39d686329158cd1987801ce115.jpg')
+}
+
+#signup-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.signup-background-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-background-content h1 {
+  color: #ffff;
+  font-size: 56px;
+  font-weight: lighter;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.signup-background-content h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: 1.1;
+  margin-top: 0px;
+
+}
+
+.signup-background-content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.signup-background-content a {
+  font-size: 1.25em;
+  min-width: 230px;
+  color: #ffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.5;
+  max-width: 240px;
+  text-decoration:none !important;
+  color: #ffff;
+  font-size: 1.25em;
+  min-width: 230px;
+  color: #ffff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.5;
+  max-width: 240px;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+
+
+#facebook-button {
+  background-color: #3b5998;
+  border: 1px solid #3b5998;
+  margin: 10px;
+}
+
+#facebook-button:hover {
+  background-color: #324b81;
+  border: 1px solid #324b81;
+}
+
+
+#facebook-button span {
+  width: 20px;
+  height: 20px;
+  margin:auto;
+  margin-right: 10px;
+
+}
+
+
+#gmail-button {
+  background-color: #ED6504;
+  border-color: #ED6504;
+  display: flex;
+  margin: 10px;
+}
+#gmail-button:hover {
+  background-color: #c95603;
+  border-color: #c95603;
+}
+#gmail-button span {
+  width: 20px;
+  height: 20px;
+  margin:auto;
+  margin-left: .5px;
+  margin-right: 10%;
+}

@@ -13,10 +13,12 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal';
 import SignUpBackground from './signup_backgrounds/signup_background';
-
+import DropDown from './header/dropdown_container';
+import Home from './home_page/home';
 const App = () => (
   <div>
    <Modal />
+
     <header className='header-nav'>
       <div className='header-div'>
       <Link to="/" className="header-link">
@@ -27,7 +29,11 @@ const App = () => (
       <HeaderContainer />
     </div>
     </header>
-    <SignUpBackground />
+    <Switch>
+      <AuthRoute exact path="/session" component={SignUpBackground} />
+      <ProtectedRoute exact path="/" component={Home} />
+    </Switch>
+
   </div>
 );
 

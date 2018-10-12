@@ -1,5 +1,5 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../../actions/ui_actions';
 import { deletErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import  LogInFormContainer  from '../session_form/login_form_container';
@@ -41,7 +41,6 @@ const Modal = ({ modal, closeModal }) => {
 
 const mapStateToProps = state => ({
   modal: state.ui.modal,
-  store1: state,
 });
 
 const mapDispatchToProps = dispatch => ({

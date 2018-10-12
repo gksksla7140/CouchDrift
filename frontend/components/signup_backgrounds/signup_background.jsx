@@ -10,11 +10,11 @@ const SignUpBackground = () => (
       <ul>
         <li>
           <a id='facebook-button'
-            href='https://www.facebook.com/'><span className='fa fa-facebook' > </span>Join with Facebook</a>
+            href='https://www.facebook.com/'><span className='fab fa-facebook-square' > </span>Join with Facebook</a>
         </li>
         <li className='gmail-container'>
           <a id='gmail-button'
-            href='https://www.google.com/'><span className='fa fa-google' > </span>Join with Gmail</a>
+            href='https://www.google.com/'><span className='fab fa-google' > </span>Join with Gmail</a>
         </li>
       </ul>
     </div>
