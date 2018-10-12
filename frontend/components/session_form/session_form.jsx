@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    const user = { email: 'demo@gmail.com', password: 'starwars' };
+    const user = { email: 'demo@user', password: 'starwars' };
     this.props.login(user);
     this.props.closeModal();
   }
