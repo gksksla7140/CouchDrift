@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181010070719) do
+ActiveRecord::Schema.define(version: 20181012232313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20181010070719) do
 
   create_table "hostings", force: :cascade do |t|
     t.integer "host_id", null: false
-    t.integer "city_id", null: false
     t.string "address", null: false
     t.float "long", null: false
     t.float "lat", null: false

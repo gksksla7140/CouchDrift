@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint(8)        not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  fname           :string
+#  lname           :string
+#  hosting         :boolean          default(TRUE)
+#  about           :string
+#  age             :integer
+#  sex             :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   attr_reader :password
 
@@ -6,6 +25,25 @@ class User < ApplicationRecord
  validates :password, length: { minimum: 6 }, allow_nil: true
 
  after_initialize :ensure_session_token
+
+  has_many :reviews,
+  foreign_key: :author_id
+
+  has_many :bookings,
+  foreign_key: :guest_id,
+  class_name: :Booking
+
+  has_many :guest,
+  through: :bookings,
+  source: :guest
+
+  has_many :hostings,
+  foreign_key: :host_id,
+  class_name: :Hosting
+
+
+
+
 
 
 

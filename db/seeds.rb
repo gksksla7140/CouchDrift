@@ -5,4 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(username: 'DemoLogin', email: 'demo@user', password: 'starwars')
+User.delete_all
+Hosting.delete_all
+User.create(username: 'Demo', email: 'demo@demo', password: 'starwars')
+
+
+
+  Hosting.create(
+    host_id: User.last.id,
+    address: 'fake address',
+    long: -73.989308,
+    lat: 40.741895,
+    description: 'hello'
+  )
