@@ -32,8 +32,9 @@ const App = () => (
   </div>
     </header>
     <Switch>
-      <AuthRoute exact path="/session" component={SignUpBackground} />
-      <ProtectedRoute exact path="/" component={Home} />
+      <AuthRoute exact path="/" component={SignUpBackground} />
+      <ProtectedRoute exact path="/home" component={Home} />
+      <Redirect to='/'/>
     </Switch>
 
   </div>

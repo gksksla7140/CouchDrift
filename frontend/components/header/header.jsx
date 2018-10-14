@@ -28,6 +28,12 @@ class Header extends React.Component {
 
   loggedIn() {
     return (
+      <div className='logged-in-header-container'>
+        <div className='search-bar'>
+          <h2>Search</h2>
+          <input type='text' placeholder='Discover a hosting'></input>
+          <i class="fas fa-search-location"></i>
+        </div>
         <nav className="logged-in-header"
            onMouseLeave={this.onLeaving}
            onClick={this.props.toggle}>
@@ -39,6 +45,7 @@ class Header extends React.Component {
           </div>
           <DropDown/>
         </nav>
+      </div>
       );
   }
 

@@ -6,13 +6,13 @@ class Api::HostingsController < ApplicationController
 
   def index
     hostings = Hosting.all
-    @hostings = hostings
+    @hostings = hostings.includes(:host)
     render :index
 
   end
 
   def show
-  @hostings = Hosting.find(params[:id])
+    @hosting = Hosting.find(params[:id])
   end
 
 

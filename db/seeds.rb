@@ -10,11 +10,28 @@ Hosting.delete_all
 User.create(username: 'Demo', email: 'demo@demo', password: 'starwars')
 
 
+Faker::UniqueGenerator.clear
+20.times do
+  gen =['M', 'F']
 
-  Hosting.create(
-    host_id: User.last.id,
-    address: 'fake address',
-    long: -73.989308,
-    lat: 40.741895,
-    description: 'hello'
+  user = User.create(
+    username: Faker::OnePiece.unique.character,
+    email: Faker::Internet.email,
+    password: 'starwars',
+    about: Faker::OnePiece.quote,
+    age: rand(20..80),
+    sex: gen.sample,
+    fname: Faker::Name.first_name,
+    lname: Faker::Name.last_name
   )
+  host =Hosting.create(
+    host_id: User.last.id,
+    address: Faker::Address.street_address,
+    long: rand(-122.5100000..-122.3000000),
+    lat: rand(37.70000000..37.8000000),
+    description: Faker::Movie.quote,
+    rating: rand(0...5),
+    rating_counts: rand(1..100)
+  )
+
+end

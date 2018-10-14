@@ -1,9 +1,6 @@
-.home {
-  div {
-  border-bottom: 1px solid #e6e6e6;
-  }
-}
+
 .side-bar-home {
+
   width: 320px;
   height: 2000px;
   div {
@@ -11,6 +8,9 @@
     width: 310px;
     margin: 10px;
   }
+}
+.profile-info {
+  list-style: none;
 }
 
 .side-bar-status {
@@ -23,4 +23,8 @@
 
 .side-bar-facebook {
   height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
