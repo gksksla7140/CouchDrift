@@ -32,7 +32,7 @@ class Header extends React.Component {
         <div className='search-bar'>
           <h2>Search</h2>
           <input type='text' placeholder='Discover a hosting'></input>
-          <i class="fas fa-search-location"></i>
+          <i className="fas fa-search-location"></i>
         </div>
         <nav className="logged-in-header"
            onMouseLeave={this.onLeaving}

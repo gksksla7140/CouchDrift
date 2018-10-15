@@ -15,6 +15,7 @@ import Modal from './modal/modal';
 import SignUpBackground from './signup_backgrounds/signup_background';
 import DropDown from './header/dropdown_container';
 import Home from './home_page/home';
+import HostingShowContainer from './hosting/hosting_show_container';
 const App = () => (
   <div>
    <Modal />
@@ -34,6 +35,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/" component={SignUpBackground} />
       <ProtectedRoute exact path="/home" component={Home} />
+      <ProtectedRoute exact path="/hostings/:hostingId" component={HostingShowContainer} />
       <Redirect to='/'/>
     </Switch>
 

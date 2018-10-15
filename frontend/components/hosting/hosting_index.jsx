@@ -14,6 +14,7 @@ class HostingIndex extends React.Component {
         <HostingIndexItem hosting={hosting} key={hosting.id}/>
       </li>)
     );
+
     return (
       <div className="hosting-index">
         <h2>Hostings!</h2>

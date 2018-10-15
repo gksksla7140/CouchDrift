@@ -81,6 +81,7 @@
 }
 
 .dropdown {
+  z-index: 4;
   position: absolute;
   top: 40px;
   right: 75px;
@@ -93,6 +94,7 @@
   line-height: 45px;
   border: 1px solid rgba(0,0,0,0.15);
   li {
+    z-index: 4;
     height: 45px;
     color: #929dad;
     font-size: 16px;

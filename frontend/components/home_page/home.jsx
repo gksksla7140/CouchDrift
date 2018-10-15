@@ -1,15 +1,18 @@
 import React from 'react';
 import SideBarContainer from './side_bar_container';
 import HostingIndex from '../hosting/hosting_index_container';
-import Map from '../map/map';
+import MapContainer from '../map/map_container';
 
 export default () => {
 
   return (
     <div className='home'>
+      <div className='home-container'>
+        <SideBarContainer/>
+        <HostingIndex/>
 
-    <SideBarContainer/>
-    <HostingIndex/>
+      </div>
+    <MapContainer/>
 
   </div>
   );
