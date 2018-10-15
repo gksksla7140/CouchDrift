@@ -20,7 +20,7 @@ export const receiveBooking = booking => ({
   booking,
 });
 
-export const clearRequestErrors = () => ({
+export const clearBookingErrors = () => ({
   type: CLEAR_BOOKING_ERRORS,
 });
 
