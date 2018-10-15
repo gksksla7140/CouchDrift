@@ -10,7 +10,7 @@ class HostingIndex extends React.Component {
   render() {
 
     const hostings = this.props.hostings.map(hosting => (
-      <li className="hosting">
+      <li className="hosting" key={hosting.id}>
         <HostingIndexItem hosting={hosting} key={hosting.id}/>
       </li>)
     );

@@ -35,7 +35,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/" component={SignUpBackground} />
       <ProtectedRoute exact path="/home" component={Home} />
-      <ProtectedRoute exact path="/hostings/:hostingId" component={HostingShowContainer} />
+      <ProtectedRoute exact path="/hostings/:hostingId" component={HostingShowContainer} />      
       <Redirect to='/'/>
     </Switch>
 

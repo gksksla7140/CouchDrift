@@ -19,6 +19,6 @@ class Api::HostingsController < ApplicationController
 
   private
   def hosting_params
-    params.require(:hosting).permit(:address, :long, :lat, :rating, :rating_counts, :description, :host_id, :rating_counts, :rating)
+    params.require(:hosting).permit(:address, :long, :lat, :rating, :rating_counts, :description, :host_id, :rating_counts, :rating, :wifi, :shower, :TV, :bathroom, :blanket, :electricity, :pet_allowed, :laundry, :kitchen, :max_guest )
   end
 end

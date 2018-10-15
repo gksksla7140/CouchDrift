@@ -13,14 +13,22 @@
 #  description   :string           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  wifi          :boolean          default(TRUE)
+#  shower        :boolean          default(TRUE)
+#  TV            :boolean          default(TRUE)
+#  bathroom      :boolean          default(TRUE)
+#  blanket       :boolean          default(TRUE)
+#  electricity   :boolean          default(TRUE)
+#  pet_allowed   :boolean          default(TRUE)
+#  laundry       :boolean          default(TRUE)
+#  kitchen       :boolean          default(TRUE)
+#  max_guest     :integer          default(1)
 #
 
 class Hosting < ApplicationRecord
   validates :address, :long, :lat, :description, presence: true
 
-  has_one :necessity,
-  foreign_key: :hosting_id,
-  class_name: :Necessity
+
 
   belongs_to :host,
   foreign_key: :host_id,

@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181012232313) do
+ActiveRecord::Schema.define(version: 2018_10_15_190541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.integer "hosting_id", null: false
@@ -46,6 +67,17 @@ ActiveRecord::Schema.define(version: 20181012232313) do
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "wifi", default: true
+    t.boolean "shower", default: true
+    t.boolean "TV", default: true
+    t.boolean "bathroom", default: true
+    t.boolean "blanket", default: true
+    t.boolean "electricity", default: true
+    t.boolean "pet_allowed", default: true
+    t.boolean "laundry", default: true
+    t.boolean "kitchen", default: true
+    t.integer "max_guest", default: 1
+    t.text "img_url", default: "https://images.pexels.com/photos/279719/pexels-photo-279719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350"
     t.index ["host_id"], name: "index_hostings_on_host_id"
   end
 

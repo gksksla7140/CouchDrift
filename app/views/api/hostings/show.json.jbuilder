@@ -22,3 +22,7 @@ json.host do
     json.extract! @hosting.host, :id, :username, :fname, :lname, :about, :sex, :age
   end
 end
+
+json.necessity do
+  json.extract! @hosting.necessity, :hosting_id, :wifi, :shower,:TV, :bathroom, :blanket, :electricity, :pet_allowed, :laundry, :kitchen, :max_guest
+end

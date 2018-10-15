@@ -16,11 +16,11 @@ class HostingIndexItem extends React.Component {
 
     return (
           <div
-          className="hosting-index"
+          className="hosting-index-item"
           onClick={this.handleClick}
           >
           <div className="index-item-info">
-            <span className="index-item-desc">{ this.props.hosting.address }</span>
+            <h3 className="index-item-desc">{ this.props.hosting.address }</h3>
           </div>
         </div>
 

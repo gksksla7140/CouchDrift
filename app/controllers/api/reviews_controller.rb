@@ -9,7 +9,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    @reviews = Review.where("hosting_id = ?", params[:hosting_id])
+    @reviews = Review.where("hosting_id = ?", params[:review][:hosting_id])
   end
 
 

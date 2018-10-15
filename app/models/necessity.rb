@@ -19,11 +19,5 @@
 #
 
 class Necessity < ApplicationRecord
-  validates :hosting_id, presence: true
-
-  belongs_to :hosting
-
-
-
 
 end

@@ -8,10 +8,12 @@
 User.delete_all
 Hosting.delete_all
 User.create(username: 'Demo', email: 'demo@demo', password: 'starwars')
+Review.delete_all
+Necessity.delete_all
 
 
 Faker::UniqueGenerator.clear
-20.times do
+20.times do |i|
   gen =['M', 'F']
 
   user = User.create(
@@ -33,5 +35,17 @@ Faker::UniqueGenerator.clear
     rating: rand(0...5),
     rating_counts: rand(1..100)
   )
+  Necessity.create(
+    hosting_id: host.id
+  )
 
+  if i == 1
+  else
+    Review.create!(
+      hosting_id: host.id,
+      author_id: user.id,
+      title: 'very good hosting',
+      body: 'I am the owner hehe'
+    )
+  end
 end
