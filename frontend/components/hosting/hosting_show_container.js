@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { fetchHosting } from '../../actions/hosting_action';
 import HostingShow from './hosting_show';
+import { clearBookingErrors } from '../../actions/booking_action';
+import { fetchReviews, deleteReview, createReview } from '../../actions/review_action';
 
 const mapStateToProps = (state, { match }) => {
   const hostingId = parseInt(match.params.hostingId);
@@ -8,11 +10,15 @@ const mapStateToProps = (state, { match }) => {
   return {
     hostingId,
     hosting,
+    reviews: Object.values(state.entities.reviews),
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchHosting: id => dispatch(fetchHosting(id))
+  fetchHosting: id => dispatch(fetchHosting(id)),
+  fetchReviews: id => dispatch(fetchReviews(id)),
+  createReview: review => dispatch(createReview(review)),
+  deleteReview: id => dispatch(deleteReview(id)),
 });
 
 export default connect(

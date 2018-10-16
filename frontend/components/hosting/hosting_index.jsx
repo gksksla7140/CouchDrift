@@ -5,6 +5,7 @@ import HostingIndexItem from './hosting_index_item';
 class HostingIndex extends React.Component {
   componentDidMount() {
     this.props.fetchHostings();
+    this.props.fetchBookings(this.props.userId);
   }
 
   render() {

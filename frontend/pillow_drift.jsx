@@ -7,7 +7,8 @@ import { login } from './actions/session_actions';
 import * as APIUtil from './util/hosting_api_util';
 import { deletErrors } from './actions/session_actions';
 import { toggleDropDown } from './actions/ui_actions';
-import { fetchHostings } from './actions/hosting_action';
+import { fetchHostings, fetchHosting } from './actions/hosting_action';
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteErrors = deletErrors;
   window.toggleDropDown = toggleDropDown;
   window.store = store;
-  window.fetchHostings = fetchHostings;
+  window.fetchHosting = fetchHosting;
   // window.APIUtil = APIUtil;
   store.dispatch(login(user));
   const root = document.getElementById('root');

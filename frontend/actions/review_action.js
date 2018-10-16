@@ -33,18 +33,13 @@ export const deleteReview = id => dispatch => (
     .then(review => dispatch(removeReview(review.id)))
 );
 
-export const fetchReview = id => dispatch => (
-  APIUtil.fetchReview(id)
-    .then(review => dispatch(receiveReview(review)))
-);
-
 export const createReview = (review) => dispatch => (
   APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review))
   ), err => dispatch(receiveReviewErrors(err.responseJSON))
 );
 
-export const fetchReviews = (userId) => dispatch => (
-  APIUtil.fetchReviews(userId)
+export const fetchReviews = (hostingId) => dispatch => (
+  APIUtil.fetchReviews(hostingId)
     .then(reviews => dispatch(receiveReviews(reviews)))
 );

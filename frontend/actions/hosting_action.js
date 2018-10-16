@@ -8,12 +8,12 @@ export const receiveHostings = hostings => ({
   hostings,
 });
 
-export const receiveHosting = ({ hosting, reviews, authors, host }) => ({
-  type: RECEIVE_HOSTING,
-  bench,
-  reviews,
-  authors,
-});
+// export const receiveHosting = ({ hosting, reviews, authors, host }) => ({
+//   type: RECEIVE_HOSTING,
+//   hosting,
+//   reviews,
+//   authors,
+// });
 
 // export const receiveReview = ({ review, average_rating, author }) => ({
 //   type: RECEIVE_REVIEW,
@@ -34,11 +34,11 @@ export const fetchHostings = () => dispatch => (
   ))
 );
 
-export const fetchHosting = id => dispatch => (
-  APIUtil.fetchHosting(id).then(payload => (
-    dispatch(receiveHosting(payload))
-  ))
-);
+// export const fetchHosting = id => dispatch => (
+//   APIUtil.fetchHosting(id).then(payload => (
+//     dispatch(receiveHosting(payload))
+//   ))
+// );
 
 // export const createBench = bench => dispatch => (
 //   APIUtil.createBench(bench).then(bench => (

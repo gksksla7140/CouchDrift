@@ -11,7 +11,7 @@ const modalStyle = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
   }
 };
 
@@ -20,35 +20,45 @@ class HostingShow extends React.Component {
     super(props);
 
     this.state = {
-      modalIsOpen: false,
+      bookingModalOpen: false,
+      reviewModalOpen: false,
+      successModalOpen: false,
     };
-
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.openBookingModal = this.openBookingModal.bind(this);
+    this.closeBookingModal = this.closeBookingModal.bind(this);
+    this.openReviewModal = this.openReviewModal.bind(this);
+    this.closeReviewModal = this.closeReviewModal.bind(this);
+    // this.openSuccessModal = this.openSuccessModal.bind(this);
+    // this.closeSuccessModal = this.closeSuccessModal.bind(this);
   }
-
+  componentDidMount() {
+    debugger
+  }
   componentWillMount() {
-
     Modal.setAppElement('body');
   }
 
-  openModal() {
-    this.setState({ modalIsOpen: true });
+  openBookingModal() {
+    this.setState({ bookingModalOpen: true });
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+  closeBookingModal() {
+    this.setState({ bookingModalOpen: false });
   }
 
-  closeModal() {
-    this.setState({ modalIsOpen: false });
+  openReviewModal() {
+    this.setState({ reviewModalOpen: true });
+  }
+
+  closeReviewModal() {
+    this.setState({
+      reviewModalOpen: false,
+    });
   }
 
   render() {
 
-    return(
+    return (
       <div>
       <Modal
           isOpen={this.state.modalIsOpen}
@@ -64,16 +74,5 @@ class HostingShow extends React.Component {
     );
   }
 }
-
-//   return (
-//     <div className="single-hosting-show">
-//       <div className="single-bench-map">
-//       </div>
-//       <div className="right-half hosting-details">
-//         <HostingDetail hosting={hosting} />
-//       </div>
-//     </div>
-//   );
-// };
 
 export default HostingShow;
