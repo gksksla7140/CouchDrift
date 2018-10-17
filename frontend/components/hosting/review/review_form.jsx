@@ -27,12 +27,6 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.submitReview}>
-          <label>title:
-            <input
-              onChange={this.update('title')}
-              value={this.state.title}>
-            </input>
-          </label>
           <label>review:
             <textarea value={this.state.body}
               onChange={this.update('body')}/>

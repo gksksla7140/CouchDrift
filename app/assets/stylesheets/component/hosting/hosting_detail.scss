@@ -1,0 +1,40 @@
+.hosting-detail-container {
+  border: 1px solid #EBEBEB;
+  line-height: 22px;
+  padding: 10px;
+  h1 {
+    font-weight: 400;
+  }
+}
+
+.amenities-list {
+  padding: 10px;
+  h1 {
+    font-weight: 400;
+  }
+}
+
+.crossed {
+  color: gray;
+
+}
+
+.crossed-div {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.amenities-ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 500px;
+  div{
+    box-sizing: border-box;
+    width: 250px;
+    height: 22px;
+    margin-bottom: 4px;
+    padding-left: 5%;
+
+  }
+}

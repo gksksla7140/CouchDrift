@@ -92,6 +92,7 @@ class HostingShow extends React.Component {
 
   renderImage() {
     return (
+      <div className='image-container'>
       <div className = 'hosting-show-img'
          style = {{ backgroundImage: 'url(' + this.props.hosting.img_url + ')',
                     backgroundSize: 'cover',
@@ -99,7 +100,9 @@ class HostingShow extends React.Component {
                     backgroundRepeat: 'no-repeat',
                   }}>
 
+
     </div>
+  </div>
   );
 
   }
@@ -110,7 +113,7 @@ class HostingShow extends React.Component {
 
   render() {
     const reviews = this.props.reviews.reverse().map(
-      (review, idx) =>  <ReviewItemContainer key={idx} review= {review} />
+      (review, idx) =>  <ReviewItemContainer key={idx} review= {review} hosting={this.props.hosting} />
   );
     const host = this.props.hosting.host;
     const hosting = this.props.hosting;
@@ -124,7 +127,7 @@ class HostingShow extends React.Component {
             <h1>{this.props.hosting.address}</h1>
           </div>
         </div>
-        <div id='show-banner-margin-div'></div>
+
 
 
         <div className='show-body'>
@@ -136,29 +139,28 @@ class HostingShow extends React.Component {
                 <div className='hosted-by-container'>
                   <div className='hosted-by'>Hosted By</div>
                   <div className='host-name'>{host.fname + ' ' + host.lname}</div>
+                    <ul className='rating-star'>
+                      <span className='fas fa-star checked'></span>
+                      <span className='fas fa-star checked'></span>
+                      <span className='fas fa-star checked'></span>
+                      <span className='far fa-star'></span>
+                      <span className='far fa-star'></span>
+                    </ul>
                 </div>
               </div>
             </div>
           <div className='host-info'>
             <ul>
-              <li>age: {host.age} </li>
               <li>email: {host.email}</li>
+              <li>age: {host.age} </li>
               <li>about:</li>
               <li>{host.about}</li>
             </ul>
           </div>
           </div>
 
-
-          <ul className='rating-star'>
-            <span className='fas fa-star checked'></span>
-            <span className='fas fa-star checked'></span>
-            <span className='fas fa-star checked'></span>
-            <span className='far fa-star'></span>
-            <span className='far fa-star'></span>
-          </ul>
-
         <HostingDetail hosting={this.props.hosting}/>
+        <h1 className='review-header'> Reviews</h1>
         {reviews}
         <button onClick={this.openReviewModal}>Add a Review</button>
       </div>

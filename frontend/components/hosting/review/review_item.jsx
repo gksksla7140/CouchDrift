@@ -21,12 +21,18 @@ class ReviewItem extends React.Component {
     };
 
     return (
+      <div className='review-item-container'>
+
       <ul>
+        <div className='review-profile'>
+          <i class="fas fa-user-circle"></i>
+          <h2>{review.username}</h2>
+        </div>
         <h3>title:{review.title}</h3>
         <li>{review.body}</li>
-        <li>by:{review.username}</li>
         {deleteButton()}
       </ul>
+    </div>
     );
 
   }

@@ -1,38 +1,54 @@
+.image-container {
+  width: 100%;
+  height: 581px;
+  overflow: hidden;
 
+}
 .hosting-show-img {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,.5);
-  div {
-    position: relative;
-    top: 550px;
-    left: 0;
-    background-color:  #00004d;
-    height: 100px;
-    width: 1000px;
-    display: flex;
-    align-items: center;
-    h1 {
-      font-size: 36px;
-      color: white;
-      line-height: 1.42857143;
-      font-family: 'Montserrat',sans-serif;
-      padding: 10px;
-      padding-left: 40px;
-    }
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  &:hover {
+    -moz-transform: scale(3);
+    -webkit-transform: scale(3);
+    transform: scale(1.1);
+  }
+}
+
+.show-banner {
+  position: relative;
+  top: -50px;
+  left: 0;
+  background-color:  #00004d;
+  height: 100px;
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  h1 {
+    font-size: 36px;
+    color: white;
+    line-height: 1.42857143;
+    font-family: 'Montserrat',sans-serif;
+    padding: 10px;
+    padding-left: 40px;
   }
 }
 
 .rating-star {
-  font-size: 20px;
+  font-size: 14px;
   span {
-    margin: 2px;
+    margin: 1px;
   }
 }
 .checked {
   color: orange;
 }
 .show-body {
+  letter-spacing: normal;
+  color: #484848;
   background-color: #ffff;
   padding: 30px;
   width: 800px;
@@ -113,4 +129,17 @@
 
 .hosted-by-container {
   font-size: 16px;
+}
+.link-index-container {
+  margin: 10px;
+}
+
+.link-index {
+  text-decoration: none;
+  border-color: rgb(0, 132, 137);
+  color: #008489;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 }
