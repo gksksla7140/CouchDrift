@@ -41,12 +41,16 @@ class BookingForm extends React.Component {
 
   render() {
     const createBookingbutton =
-    this.state.endDate ?  <input type='submit' value='Book'/> :
-    <input type='submit' disabled value='Book'/>;
+    this.state.endDate ?  <input className='create-book-button' type='submit' value='Book'/> :
+    <input type='submit' className='create-book-button didntpickdate' disabled value='Book'/>;
     return (
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <div className='form-content'>
+        <div className='booking-form-container'>
+
+          <h1>Pick the Dates</h1>
+
+
+          <form className='form-container'
+            onSubmit={this.handleSubmit}>
               <DateRangePicker
                 startDateId={this.state.startDate}
                 startDateId={this.state.endDate}
@@ -58,7 +62,6 @@ class BookingForm extends React.Component {
                 onFocusChange={ (focused)  => { this.setState({ focused }); }}
                 />
 
-            </div>
             {createBookingbutton}
 
           </form>

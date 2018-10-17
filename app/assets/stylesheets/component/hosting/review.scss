@@ -8,6 +8,10 @@
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 20px;
 }
+.profile-delete-container {
+  display: flex;
+  justify-content: space-between;
+}
 .title-profile-review {
   display: flex;
   justify-content: space-between;
@@ -19,6 +23,7 @@
 .review-profile {
   display: flex;
   justify-content: flex-start;
+  margin: 10px;
   i {
     font-size: 40px;
     margin-right: 14px;
@@ -27,5 +32,71 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
+  }
+}
+
+.review-body {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.deleteButton {
+  background-color: #FF5A5F ;
+  color: white;
+  font-weight: 500;
+  width: 90px;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+
+  border-radius: 3px;
+  border: none;
+  &:hover {
+    background-color: #c9545c;
+  }
+}
+
+.button-host-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.book-button-container {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    color: white;
+    font-weight: 500;
+    background-color: #002259;
+    font-size: 20px;
+    width: 140px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    &:hover {
+      background-color: #1a284c;
+    }
+
+  }
+}
+
+.add-review-button {
+  color: white;
+  font-weight: 500;
+  background-color:  #FF5A5F;
+  font-size: 15px;
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  &:hover {
+    background-color: #c9545c;
   }
 }

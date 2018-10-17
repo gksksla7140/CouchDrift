@@ -14,9 +14,11 @@ import ReviewFormContainer from './review/review_form_container';
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    width: '400px',
-    height: '100px',
+    width: '500px',
+    height: '400px',
     overflow: 'visible',
+    border: '1px solid #e2dede',
+
   }
 };
 
@@ -149,6 +151,10 @@ class HostingShow extends React.Component {
                 </div>
               </div>
             </div>
+            <div className='button-host-info-container'>
+              <div className='book-button-container'>
+            <button onClick={this.openBookingModal}>Book</button>
+          </div>
           <div className='host-info'>
             <ul>
               <li>email: {host.email}</li>
@@ -157,12 +163,13 @@ class HostingShow extends React.Component {
               <li>{host.about}</li>
             </ul>
           </div>
+        </div>
           </div>
 
         <HostingDetail hosting={this.props.hosting}/>
         <h1 className='review-header'> Reviews</h1>
         {reviews}
-        <button onClick={this.openReviewModal}>Add a Review</button>
+        <button className='add-review-button' onClick={this.openReviewModal}>Add a Review</button>
       </div>
       <Modal
           isOpen={this.state.bookingModalOpen}
@@ -181,7 +188,7 @@ class HostingShow extends React.Component {
 
         </Modal>
 
-        <button onClick={this.openBookingModal}>Book</button>
+
           <Modal
              isOpen={this.state.successModalOpen}
              onRequestClose={this.closeSuccessModal}

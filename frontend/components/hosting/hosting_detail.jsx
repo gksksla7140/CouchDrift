@@ -38,10 +38,10 @@ You can feel what Tokyo was like back in 1940's.</h3>
           <i class="fas fa-poop"></i>} Bathroom</div>
         <div className={hosting.blanket ? null : 'crossed-div' }
           >{hosting.blanket ? <i className="fas fa-bed"></i> :
-          <i className="fas fa-bed crossed"/>} bed</div>
+          <i className="fas fa-bed crossed"/>} Bed</div>
         <div className={hosting.electricity ? null : 'crossed-div' }
           >{hosting.electricity ? <i className="fas fa-plug"></i> :
-          <i className="fas fa-plug crossed"/>} electricity</div>
+          <i className="fas fa-plug crossed"/>} Electricity</div>
         <div className={hosting.pet_allowed ? null : 'crossed-div' }
           >{hosting.pet_allowed ? <i className="fas fa-paw"></i> :
            <i className="fas fa-paw crossed"/>} Pet</div>
@@ -50,7 +50,7 @@ You can feel what Tokyo was like back in 1940's.</h3>
           <i className="fas fa-trash crossed"/>} Trash</div>
         <div className={hosting.kitchen ? null : 'crossed-div' }
           >{hosting.kitchen ? <i className="fas fa-utensils"></i> :
-          <i className="fas fa-utensils crossed"/>} kitchen</div>
+          <i className="fas fa-utensils crossed"/>} Kitchen</div>
         <div>Max guest: {hosting.max_guest}</div>
       </div>
       <div className='link-index-container'>

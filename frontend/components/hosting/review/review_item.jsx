@@ -14,7 +14,7 @@ class ReviewItem extends React.Component {
     const review = this.props.review;
     const deleteButton = () => {
       if (review.author_id === this.props.currentUser) {
-        return <button className="button" onClick={this.handleDelete}>Delete</button>;
+        return <button className="deleteButton" onClick={this.handleDelete}>Delete</button>;
       }
 
       return null;
@@ -23,15 +23,15 @@ class ReviewItem extends React.Component {
     return (
       <div className='review-item-container'>
 
-      <ul>
+        <div className='profile-delete-container'>
         <div className='review-profile'>
           <i class="fas fa-user-circle"></i>
           <h2>{review.username}</h2>
         </div>
-        <h3>title:{review.title}</h3>
-        <li>{review.body}</li>
         {deleteButton()}
-      </ul>
+      </div>
+        <div className='review-body'>{review.body}</div>
+
     </div>
     );
 

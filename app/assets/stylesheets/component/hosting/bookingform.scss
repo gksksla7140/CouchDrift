@@ -1,0 +1,46 @@
+.booking-form-container {
+  color: rgb(72, 72, 72);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  h1 {
+    font-size: 32px;
+    font-weight: 800px;
+    margin: 20px;
+  }
+}
+
+.form-container {
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.create-book-button {
+  color: white;
+  font-weight: 500;
+  background-color:  #FF5A5F;
+  font-size: 15px;
+  width: 140px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #c9545c;
+  }
+}
+
+.didntpickdate {
+  background-color: #efeff5;
+  &:hover {
+    background-color: #efeff5;
+  }
+}

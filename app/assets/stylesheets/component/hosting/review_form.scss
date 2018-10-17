@@ -1,0 +1,45 @@
+.review-form-container {
+  color: rgb(72, 72, 72);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-size: 32px;
+    margin: 20px;
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+  }
+  textarea {
+    width: 80%;
+    height:300px;
+    border: 1px solid #e9e8ea;
+    &:focus {
+    outline: none; 
+    }
+  }
+  input {
+    margin: 10px;
+    color: white;
+    font-weight: 500;
+    background-color:  #FF5A5F;
+    font-size: 15px;
+    width: 140px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #c9545c;
+    }
+  }
+}

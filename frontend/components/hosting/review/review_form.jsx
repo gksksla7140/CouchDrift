@@ -6,7 +6,7 @@ class ReviewForm extends React.Component {
     this.state = {
       hosting_id: this.props.hosting.id,
       author_id: this.props.author.id,
-      title: '',
+      title: 'no-title',
       body: '',
     };
     this.submitReview = this.submitReview.bind(this);
@@ -25,13 +25,13 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='review-form-container'>
+        <h1>Share you experience</h1>
         <form onSubmit={this.submitReview}>
-          <label>review:
             <textarea value={this.state.body}
+              placeholder='Type your review here...'
               onChange={this.update('body')}/>
-          </label>
-          <input type='submit' value='Add Review'></input>
+            <input type='submit' value='Post'></input>
         </form>
       </div>
     );
