@@ -8,10 +8,14 @@ import {
 } from 'react-router-dom';
 
 const HostingDetail = ({ hosting }) => {
+  // const rating = hosting.rating || 0;
+  // const stars =
+
+
   return (
-    <div>
+    <div className='hosting-detail-container'>
+
       <ul className="hosting-list">
-        <li>Rating: {hosting.rating || 'No reviews yet'}</li>
         <li>Description: {hosting.description}</li>
         <li>Latitude: {hosting.lat}</li>
         <li>Longitude: {hosting.long}</li>

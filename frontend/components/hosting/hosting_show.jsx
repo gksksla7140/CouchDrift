@@ -49,6 +49,7 @@ class HostingShow extends React.Component {
     this.closeSuccessModal = this.closeSuccessModal.bind(this);
     this.openErrorModal = this.openErrorModal.bind(this);
     this.closeErrorModal = this.closeErrorModal.bind(this);
+    this.renderImage = this.renderImage.bind(this);
   }
 
   componentDidMount() {
@@ -89,6 +90,20 @@ class HostingShow extends React.Component {
     this.setState({ successModalOpen: true });
   }
 
+  renderImage() {
+    return (
+      <div className = 'hosting-show-img'
+         style = {{ backgroundImage: 'url(' + this.props.hosting.img_url + ')',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                    backgroundRepeat: 'no-repeat',
+                  }}>
+
+    </div>
+  );
+
+  }
+
   closeSuccessModal() {
     this.setState({ successModalOpen: false });
   }
@@ -97,12 +112,56 @@ class HostingShow extends React.Component {
     const reviews = this.props.reviews.reverse().map(
       (review, idx) =>  <ReviewItemContainer key={idx} review= {review} />
   );
+    const host = this.props.hosting.host;
+    const hosting = this.props.hosting;
+    const sex = host.sex === 'M' ? <i class="fas fa-male"></i> : <i class="fas fa-female"></i>;
 
     return (
-      <div>
+      <div className='show-container'>
+        <div className='show-img-title-container'>
+          {this.renderImage()}
+          <div className='show-banner'>
+            <h1>{this.props.hosting.address}</h1>
+          </div>
+        </div>
+        <div id='show-banner-margin-div'></div>
+
+
+        <div className='show-body'>
+          <div className='about-container'>
+            <div className='about-icon'>
+              <h1>About</h1>
+              <div className='about-by'>
+                <div className='host-icon'>{sex}</div>
+                <div className='hosted-by-container'>
+                  <div className='hosted-by'>Hosted By</div>
+                  <div className='host-name'>{host.fname + ' ' + host.lname}</div>
+                </div>
+              </div>
+            </div>
+          <div className='host-info'>
+            <ul>
+              <li>age: {host.age} </li>
+              <li>email: {host.email}</li>
+              <li>about:</li>
+              <li>{host.about}</li>
+            </ul>
+          </div>
+          </div>
+
+
+          <ul className='rating-star'>
+            <span className='fas fa-star checked'></span>
+            <span className='fas fa-star checked'></span>
+            <span className='fas fa-star checked'></span>
+            <span className='far fa-star'></span>
+            <span className='far fa-star'></span>
+          </ul>
+
         <HostingDetail hosting={this.props.hosting}/>
         {reviews}
         <button onClick={this.openReviewModal}>Add a Review</button>
+      </div>
       <Modal
           isOpen={this.state.bookingModalOpen}
           onRequestClose={this.closeBookingModal}
