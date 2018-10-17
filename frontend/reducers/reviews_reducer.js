@@ -1,9 +1,11 @@
 import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_action';
 import { merge } from 'lodash';
 
-const reviewRedcuer = (state ={}, action) => {
+const reviewReducer = (state ={}, action) => {
   Object.freeze(state);
   switch (action.type) {
+    case RECEIVE_REVIEWS:
+      return action.reviews;
     case RECEIVE_REVIEW:
       return merge({}, state, { [action.review.id]: action.review });
     case REMOVE_REVIEW:
@@ -15,4 +17,4 @@ const reviewRedcuer = (state ={}, action) => {
   }
 };
 
-export default reviewRedcuer;
+export default reviewReducer;

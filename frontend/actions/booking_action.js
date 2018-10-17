@@ -31,6 +31,5 @@ export const fetchBookings = (guestId) => dispatch => (
 
 export const createBooking = (booking) => dispatch => (
   APIUtil.createBooking(booking)
-    .then(booking => dispatch(receiveBooking(booking))
-  ), errors => dispatch(receiveBookingErrors(errors.responseJSON))
+    .then(booking => dispatch(receiveBooking(booking)), errors => dispatch(receiveBookingErrors(errors.responseJSON)))
 );

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { fetchHosting } from '../../actions/hosting_action';
 import HostingShow from './hosting_show';
 import { clearBookingErrors } from '../../actions/booking_action';
 import { fetchReviews, deleteReview, createReview } from '../../actions/review_action';

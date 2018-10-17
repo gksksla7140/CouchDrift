@@ -16,9 +16,9 @@ class Map extends Component {
     zoom: 12,
   };
 
-  componentDidMount() {
-    this.props.fetchHostings();
-  }
+  // componentDidMount() {
+  //   this.props.fetchHostings();
+  // }
 
   render() {
     const hostings = this.props.hostings.map(hosting => (

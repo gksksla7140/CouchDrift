@@ -7,7 +7,7 @@ class Api::NecessitiesController < ApplicationController
   end
 
   def index
-    debugger
+
     @necessity = Necessity.where('hosting_id = ?', params[:necessity][:hosting_id])
     render :show
   end

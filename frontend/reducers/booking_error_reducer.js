@@ -5,7 +5,7 @@ import {
   CLEAR_BOOKING_ERRORS,
 } from '../actions/booking_action';
 
-const bookingErrorReducer = (state ={}, action) => {
+const bookingErrorReducer = (state =[], action) => {
     switch (action.type) {
       case RECEIVE_BOOKING_ERRORS:
         return action.errors;
