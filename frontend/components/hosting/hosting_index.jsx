@@ -29,7 +29,7 @@ class HostingIndex extends React.Component {
     const content = this.state.checked ? <MapContainer/> : hostings;
     return (
       <div className="hosting-index">
-        <div>
+        <div className='switch-wrapper'>
         <h1>Travel the world with Couchdrift </h1>
           <label htmlFor="material-switch" className='switch'>
             <div>Find by Map</div>

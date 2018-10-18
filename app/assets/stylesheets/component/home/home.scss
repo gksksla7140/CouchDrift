@@ -1,7 +1,13 @@
+.switch-wrapper {
+display: flex;
+justify-content: space-between;
+padding: 10px;
+ h1 {
+   margin-left: 290px;
+ }
+}
 .switch {
-  position: absolute;
-  top: 85px;
-  right: 364px;
+  margin: 10px;
 }
 .side-bar-home {
 

@@ -1,0 +1,37 @@
+.map-index-item {
+  color: #fd4205;
+  cursor: pointer;
+  div:nth-of-type(1) {
+    display: none;
+    width: 150px;
+    height: 80px;
+    background-color: white;
+
+  }
+  &:hover {
+    div:nth-of-type(1) {
+      display: block;
+      position: absolute;
+      border-radius: 10px;
+      bottom: 15px;
+      z-index: 10;
+    }
+  }
+}
+.username-icon-container {
+display: flex;
+justify-content: flex-start;
+    i {
+      font-size: 24px;
+      margin: 5px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 10px;
+    }
+    h3 {
+      margin: 10px;
+      padding: 10px;
+      line-height: 22px;
+    }
+}
