@@ -9,7 +9,7 @@
 }
 
 .booking-list-container {
-  height: 871px;
+  height: 854px;
   overflow: scroll;
 
   h1 {
@@ -24,8 +24,13 @@
 }
 
 .approved {
-  color: #b3ffb3;
+  color: #48e648;
 }
 .pending {
   color: #b3b3cc;
+}
+
+.swtich {
+  width: 100px;
+  height: 100px;
 }

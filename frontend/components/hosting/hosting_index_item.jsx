@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import SwitchButton from 'react-switch-button';
+// import csss from 'react-switch-button/dist/react-switch-button.css';
 
 class HostingIndexItem extends React.Component {
   constructor(props) {

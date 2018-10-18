@@ -6,7 +6,10 @@ import HostingDetail from './hosting_detail';
 import ReviewItemContainer from './review/review_item_container';
 import BookingFormContainer from './booking/booking_form_container';
 import ReviewFormContainer from './review/review_form_container';
-  const modalStyle = {
+import Switch from 'react-toggle-switch';
+
+
+const modalStyle = {
   content : {
     top                   : '50%',
     left                  : '50%',
@@ -42,6 +45,7 @@ class HostingShow extends React.Component {
       reviewModalOpen: false,
       successModalOpen: false,
       errorModalOpen: false,
+      switched: false,
     };
     this.openBookingModal = this.openBookingModal.bind(this);
     this.closeBookingModal = this.closeBookingModal.bind(this);
@@ -52,7 +56,16 @@ class HostingShow extends React.Component {
     this.openErrorModal = this.openErrorModal.bind(this);
     this.closeErrorModal = this.closeErrorModal.bind(this);
     this.renderImage = this.renderImage.bind(this);
+    this.toggleSwitch = this.toggleSwitch.bind(this);
   }
+  toggleSwitch = () => {
+      this.setState(prevState => {
+        return {
+          switched: !prevState.switched
+        };
+      });
+    };
+
 
   componentDidMount() {
     this.props.fetchReviews(this.props.hostingId);
@@ -219,6 +232,7 @@ class HostingShow extends React.Component {
               Oops Someone already book those dates!
             </div>
           </Modal>
+           <Switch className='swtich' onClick={this.toggleSwitch} on={this.state.switched}/>
       </div>
     );
   }
