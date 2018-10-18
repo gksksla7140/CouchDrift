@@ -17,14 +17,14 @@ class HostingIndexItem extends React.Component {
       backgroundImage: `url(${this.props.hosting.img_url})`,
     };
     return (
-          <li
-          className="hosting-index-item"
-          onClick={this.handleClick}
-          >
+      <div className='index-item-container' onClick={this.handleClick}>
+        <div className='overflow'>
           <div className="index-item-info" style= {img}>
-            <h3 className="index-item-desc">{ this.props.hosting.address }</h3>
           </div>
-        </li>
+        </div>
+
+        <div className='hosting-address'>{this.props.hosting.address}</div>
+      </div>
 
     );
   }

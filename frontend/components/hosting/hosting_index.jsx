@@ -11,17 +11,16 @@ class HostingIndex extends React.Component {
   render() {
 
     const hostings = this.props.hostings.map(hosting => (
-
         <HostingIndexItem hosting={hosting} key={hosting.id}/>)
 
     );
 
     return (
       <div className="hosting-index">
-        <h1>Hostings!</h1>
-        <ul className="hostings-item">
+        <h1>Travel the world with Couchdrift </h1>
+        <div className="hostings-item">
           { hostings }
-        </ul>
+        </div>
       </div>
     );
   }

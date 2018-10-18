@@ -1,12 +1,10 @@
 
 .side-bar-home {
 
-  width: 320px;
   min-height: 1000px;
+  width: 300px;
   div {
     background-color: #ffff;
-    width: 310px;
-    margin: 10px;
   }
 }
 .profile-info {
@@ -14,11 +12,14 @@
 }
 
 .side-bar-status {
-  height: 160px;
+  min-height: 600px;
+
+
 }
 
 .side-bar-profile {
-  height: 210px;
+  min-height:  210px;
+
 }
 
 .side-bar-facebook {
@@ -27,4 +28,85 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.home-profile-icon {
+  background-image: url('https://tcdn.couchsurfing.com/pdRtrZg1LSrt89nm8GJxpH-3Z3w=/200x200/smart/https://ht-cdn.couchsurfing.com/assets/profile-picture-placeholder.png');
+  background-position: center;
+  background-size: cover;
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  margin-top: 30px;
+
+}
+.home-name {
+  color: #27374c;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1em;
+  margin-bottom: 35px;
+  padding-bottom: 15px;
+}
+
+.icon-name-container {
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  margin-top: 10px;
+
+}
+
+.user-profile {
+  padding-top:  10px;
+  padding-bottom: 10px;
+  min-height: 200px;
+  margin-bottom: 10px;
+  h2 {
+    font-size: 1.2rem;
+    color: #ed6542;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.user-pro-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 6px;
+}
+
+.user-pro-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 6px;
+}
+
+.user-pro-wrapper {
+  display: flex;
+  justify-content: center;
+
+}
+#about {
+  margin-left: 90px;
+}
+
+.about {
+  h4 {
+    padding: 15px;
+    padding-top: 0;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
 }

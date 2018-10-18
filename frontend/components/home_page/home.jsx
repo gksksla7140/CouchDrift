@@ -12,8 +12,9 @@ export default () => {
         <HostingIndex/>
 
       </div>
-    <MapContainer/>
 
   </div>
   );
 };
+
+// <MapContainer/>

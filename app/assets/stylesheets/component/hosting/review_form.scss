@@ -20,9 +20,10 @@
   textarea {
     width: 80%;
     height:300px;
+    font-size: 20px;
     border: 1px solid #e9e8ea;
     &:focus {
-    outline: none; 
+    outline: none;
     }
   }
   input {

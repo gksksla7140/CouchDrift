@@ -1,4 +1,5 @@
 import React from 'react';
+import BookingItem from './booking_item';
 
 class SideBar extends React.Component {
   constructor(props) {
@@ -8,27 +9,46 @@ class SideBar extends React.Component {
   render() {
     const user = this.props.currentUser;
     const hosting = user.hosting ? 'Hosting' : 'Not Hosting';
+    const name = user.fname ? (user.fname + ' ' + user.lname) : 'No name';
+    const bookings = this.props.bookings.map(booking =>
+      <BookingItem booking={booking}/>
+    );
     return (
       <div className='side-bar-home'>
         <div className='side-bar-status'>
-          <p>Username: {user.username}</p>
-          <p>Status: {hosting}</p>
-        </div>
-        <div className='side-bar-profile'>
-          <ul className= 'profile-info'>
-            <li>Name: {user.fname + ' ' + user.lname}</li>
-            <li>email: {user.email}</li>
-            <li>about: {user.about}</li>
-            <li>sex: {user.sex}</li>
-            <li>age: {user.age}</li>
-          </ul>
-        </div>
+          <div className='icon-name-container'>
+          <div className='home-profile-icon'></div>
+            <div className='home-name'>{name}</div>
+          </div>
+          <div className='user-profile'>
+            <h2>Profile</h2>
+            <div className='user-pro-wrapper'>
+            <div className='user-pro-1'>
+              <h3>Username:</h3>
+              <h3>Email:</h3>
+              <h3>Age:</h3>
+              <h3>Sex:</h3>
+            </div>
+            <div className='user-pro-2'>
+              <h3>{user.username}</h3>
+              <h3>{user.email}</h3>
+              <h3>{user.age}</h3>
+              <h3>{user.sex}</h3>
+            </div>
+          </div>
+          <div className='about'>
+            <h3 id='about'> About: </h3>
+            <h4>{user.about}</h4>
+          </div>
 
-        <div className='side-bar-facebook'>
-          <h2>Add us in Facebook!</h2>
-                <a id='facebook-button'
-                  href='https://www.facebook.com/'><span className='fab fa-facebook-square' > </span> Facebook</a>
+          </div>
+
         </div>
+        <div className='booking-list-container'>
+        <h1>Your Bookings</h1>
+        {bookings}
+      </div>
+
 
 
       </div>
