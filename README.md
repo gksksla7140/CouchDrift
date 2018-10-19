@@ -1,9 +1,14 @@
-# README
+# CouchDrift
+ 
+ [Live](https://couch-drift.herokuapp.com/#/)
+ 
+CouchDrift is a web application that was inspired by CouchSurfing which enables users to search for and book stays at houses all over San Francisco. It was built using Java Script, Ruby on Rails, React/Redux, and PostgreSQL.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+
+## Technologies
+
+*
 
 * Ruby version
 
