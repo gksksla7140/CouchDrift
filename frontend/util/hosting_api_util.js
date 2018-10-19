@@ -12,10 +12,10 @@ export const fetchHosting = id => (
   })
 );
 
-export const createHosting = hostings => (
+export const createHosting = hosting => (
   $.ajax({
     method: 'POST',
     url: 'api/hostings',
-    data: { hostings },
+    data: { hosting },
   })
 );

@@ -19,6 +19,8 @@
     "react-dom": "^16.5.2",
     "react-modal": "^3.6.1",
     "react-moment": "^0.8.1",
+    "react-radio-buttons": "^1.2.2",
+    "react-radio-group": "^3.0.3",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
