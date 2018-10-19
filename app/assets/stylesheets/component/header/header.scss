@@ -98,7 +98,11 @@
     height: 45px;
     color: #929dad;
     font-size: 16px;
+    &:hover {
+      color: #ff704d;
+    }
   }
+
 }
 
 .hidden-dropdown {

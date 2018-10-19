@@ -2,31 +2,27 @@ import * as APIUtil from '../util/hosting_api_util';
 
 export const RECEIVE_HOSTINGS = 'RECEIVE_HOSTINGS';
 export const RECEIVE_HOSTING = 'RECEIVE_HOSTING';
+export const RECEIVE_HOSTING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
+export const CLEAR_HOSTING_ERRORS = 'CLEAR_HOSTING_ERRORS';
 
 export const receiveHostings = hostings => ({
   type: RECEIVE_HOSTINGS,
   hostings,
 });
 
-// export const receiveHosting = ({ hosting, reviews, authors, host }) => ({
-//   type: RECEIVE_HOSTING,
-//   hosting,
-//   reviews,
-//   authors,
-// });
+export const receiveHosting = (hosting) => ({
+  type: RECEIVE_HOSTING,
+  hosting,
+});
 
-// export const receiveReview = ({ review, average_rating, author }) => ({
-//   type: RECEIVE_REVIEW,
-//   review,
-//   average_rating,
-//   author,
-// });
+export const receiveHostingErrors = errors => ({
+  type: RECEIVE_HOSTING_ERRORS,
+  errors,
+});
 
-// export const createReview = review => dispatch => (
-//   APIUtil.createReview(review).then(review => (
-//     dispatch(receiveReview(review))
-//   ))
-// );
+export const clearHostingErrors = () => ({
+  type: CLEAR_HOSTING_ERRORS,
+});
 
 export const fetchHostings = () => dispatch => (
   APIUtil.fetchHostings().then(hostings => (
@@ -34,14 +30,10 @@ export const fetchHostings = () => dispatch => (
   ))
 );
 
-// export const fetchHosting = id => dispatch => (
-//   APIUtil.fetchHosting(id).then(payload => (
-//     dispatch(receiveHosting(payload))
-//   ))
-// );
-
-// export const createBench = bench => dispatch => (
-//   APIUtil.createBench(bench).then(bench => (
-//     dispatch(receiveBench(bench))
-//   ))
-// );
+export const createHosting = hosting => dispatch => (
+  APIUtil.createHosting(hosting)
+  .then(hosting => (
+    dispatch(receiveHosting(hosting)),
+    errors => dispatch(receiveBookingErrors(errors.responseJSON))
+  ))
+);

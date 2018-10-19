@@ -28,9 +28,8 @@ class DropDown extends React.Component {
   render () {
     return (
       <ul className={this.props.toggled ? 'dropdown' : 'hidden-dropdown'}>
-        <li>My Dashboard</li>
-        <li>My Profile</li>
-        <li>Account & Setting</li>
+        <li>Edit Profile</li>
+        <li> New Booking</li>
         <li onClick={this.logOut}>Log Out</li>
       </ul>
     );

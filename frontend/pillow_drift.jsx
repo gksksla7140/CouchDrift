@@ -8,8 +8,7 @@ import * as APIUtil from './util/hosting_api_util';
 import { deletErrors } from './actions/session_actions';
 import { toggleDropDown } from './actions/ui_actions';
 import { fetchHostings } from './actions/hosting_action';
-
-
+import axios from 'axios';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.deleteErrors = deletErrors;
   window.toggleDropDown = toggleDropDown;
   window.store = store;
-  // window.APIUtil = APIUtil;
+  window.axios = axios;
   store.dispatch(login(user));
   const root = document.getElementById('root');
   ReactDOM.render(<Root store = { store} />, root);

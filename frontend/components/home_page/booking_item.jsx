@@ -1,8 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BookingIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.history.push(`/hostings/${this.props.booking.hosting.id}`);
   }
 
   render() {
@@ -13,7 +20,7 @@ class BookingIndex extends React.Component {
     <div className='approved'>{'APPROVED'}</div> : <div className='pending'>{'PENDING'}</div>;
 
     return (
-      <div className='booking-item-container'>
+      <div className='booking-item-container' onClick={this.handleClick}>
           <div className='booking-address'>
             Address: {booking.hosting.address}
           </div>
@@ -29,4 +36,4 @@ class BookingIndex extends React.Component {
   }
 }
 
-export default BookingIndex;
+export default withRouter(BookingIndex);
