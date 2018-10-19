@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.toggleDropDown = toggleDropDown;
   window.store = store;
   window.axios = axios;
-  store.dispatch(login(user));
   const root = document.getElementById('root');
   ReactDOM.render(<Root store = { store} />, root);
 });
