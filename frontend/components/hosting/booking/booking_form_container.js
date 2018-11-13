@@ -15,6 +15,7 @@ const mdp = dispatch => ({
   createBooking: booking => dispatch(createBooking(booking)),
   clearBookingErrors: () => dispatch(clearBookingErrors()),
   fetchBookings: (id) => dispatch(fetchBookings(id)),
+  he;
 });
 
 export default withRouter(connect(msp, mdp)(BookingForm));
