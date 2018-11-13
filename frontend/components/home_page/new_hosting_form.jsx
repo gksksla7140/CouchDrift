@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { RadioGroup, Radio } from 'react-radio-group';
-
 class NewHostingForm extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +8,7 @@ class NewHostingForm extends React.Component {
       address: '',
       long: null,
       lat: null,
-      img: '',
+      img_url: '',
       description: '',
       wifi: false,
       shower: false,
@@ -55,7 +54,9 @@ class NewHostingForm extends React.Component {
           // this.setState({ [lat]: parseInt(position.lat) });
         }).then(() =>
         this.props.createHosting(this.state)
-      );
+      ).then(() => {
+        this.props.history.push('/home');
+      });
   }
 
   handleSubmit(e) {
@@ -80,8 +81,8 @@ class NewHostingForm extends React.Component {
         </label>
         <label>
           <input type='text' className='address-input'
-            name='hosting[img]'
-             placeholder ='image url'  onChange={this.update('img')} value={this.state.img}></input>
+            name='hosting[img_url]'
+             placeholder ='image url'  onChange={this.update('img_url')} value={this.state.img_url}></input>
         </label>
         <div className='radio-checkbox'>
         <label>Wifi

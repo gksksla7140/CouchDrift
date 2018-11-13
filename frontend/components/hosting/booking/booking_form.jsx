@@ -30,7 +30,7 @@ class BookingForm extends React.Component {
        .then(this.props.closeModal)
        .then(() => {
           this.props.openSuccessModal();
-          setTimeout(() => this.props.histroy.push('/'), 1000);
+          this.props.fetchBookings(this.props.guest);
         }, () => {
           this.props.openErrorModal();
           this.props.clearBookingErrors();

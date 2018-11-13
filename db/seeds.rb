@@ -6,8 +6,8 @@ pictures =[
   'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/271734/pexels-photo-271734.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/269262/pexels-photo-269262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  'https://images.pexels.com/photos/279719/pexels-photo-279719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-  'https://images.pexels.com/photos/1234462/pexels-photo-1234462.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  'https://images.pexels.com/photos/276715/pexels-photo-276715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  'https://images.pexels.com/photos/276645/pexels-photo-276645.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -32,7 +32,7 @@ necessities = [true, false]
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 Hosting.delete_all
-User.create(username: 'Demo', email: 'demo@demo', password: 'starwars', fname:'Iamthe', lname:'DemoUser', sex:'M', about:'I am demo user?')
+User.create(username: 'Demo', email: 'demo@demo', password: 'starwars', fname:'Iamthe', age: 23, lname:'DemoUser', sex:'M', about:'I am demo user?')
 Review.delete_all
 Necessity.delete_all
 

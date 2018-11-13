@@ -13,6 +13,7 @@ class BookingIndex extends React.Component {
   }
 
   render() {
+
     const booking = this.props.booking;
     const startDate = new Date(booking.start_date).toDateString();
     const endDate = new Date(booking.end_date).toDateString();

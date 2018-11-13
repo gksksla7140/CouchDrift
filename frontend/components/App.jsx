@@ -24,7 +24,7 @@ const App = () => (
     <header className='header-container'>
       <div className='header-nav'>
       <div className='header-div'>
-      <Link to="/" className="header-link">
+      <Link to="/home" className="header-link">
         <img id='logo' src={'https://ht-assets.couchsurfing.com/assets/'
           + 'logo-orange-58ccd2edda8895d1e1742f7744683e61f2c6fa069290a9ff'
           + '012ef09d51ea643b.png'}></img>

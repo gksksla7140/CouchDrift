@@ -6,13 +6,17 @@ class SideBar extends React.Component {
     super(props);
   }
 
+
   render() {
     const user = this.props.currentUser;
     const hosting = user.hosting ? 'Hosting' : 'Not Hosting';
     const name = user.fname ? (user.fname + ' ' + user.lname) : 'No name';
+    if (this.props.bookings) {
+    }
     const bookings = this.props.bookings.map(booking =>
       <BookingItem booking={booking}/>
     );
+
     return (
       <div className='side-bar-home'>
         <div className='side-bar-status'>
@@ -37,7 +41,6 @@ class SideBar extends React.Component {
             </div>
           </div>
           <div className='about'>
-            <h3 id='about'> About: </h3>
             <h4>{user.about}</h4>
           </div>
 
