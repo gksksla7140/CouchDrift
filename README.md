@@ -1,10 +1,12 @@
-# Couch Drift
 
-[Live](https://couch-drift.herokuapp.com/#/)
-
+# CouchDrift
+ 
+ [Live](https://couch-drift.herokuapp.com/#/)
+ 
 CouchDrift is a web application that was inspired by CouchSurfing which enables users to search for and book stays at houses all over San Francisco. It was built using Java Script, Ruby on Rails, React/Redux, and PostgreSQL.
 
-## Technologies used 
+
+## Technologies 
 * Ruby on Rails
 * Javascript
 * React / Redux 
