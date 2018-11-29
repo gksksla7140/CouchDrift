@@ -7,28 +7,57 @@ class HostingIndex extends React.Component {
     super(props);
     this.state = {
       checked: false,
+      inputVal: '',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
   handleChange(checked) {
     this.setState({ checked });
   }
+  handleInput(event) {
+    this.setState({ inputVal: event.currentTarget.value });
+  }
+  
 
   componentDidMount() {
     this.props.fetchHostings();
     this.props.fetchBookings(this.props.userId);
   }
 
+  matches() {
+    if (this.state.inputVal.length === 0) {
+      return this.props.hostings;
+    }
+
+    // this.props.hostings.forEach(hosting => {
+    //   const sub = hosting.slice(0, this.state.inputVal.length);
+    //   if (sub.toLowerCase() === this.state.inputVal.toLowerCase()) {
+    //     matches.push(hosting);
+    //   }
+    // });
+    let matches = this.props.hostings.filter(hosting => hosting.address.toLowerCase().includes(this.state.inputVal.toLowerCase()));
+
+
+    return matches;
+  }
+
   render() {
 
-    const hostings = this.props.hostings.map(hosting => (
+    const hostings = this.matches().map(hosting => (
         <HostingIndexItem hosting={hosting} key={hosting.id}/>)
 
     );
     const content = this.state.checked ? <MapContainer/> : hostings;
     return (
       <div className="hosting-index">
+        <div className='search-bar'>
+          <h2>Search</h2>
+          <input type='text' onChange={this.handleInput}
+            value={this.state.inputVal} placeholder='Search by address'></input>
+          <i className="fas fa-search-location"></i>
+        </div>
         <div className='switch-wrapper'>
         <h1>Travel the world with Couchdrift </h1>
           <label htmlFor="material-switch" className='switch'>

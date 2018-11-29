@@ -2,10 +2,13 @@
   width: 80%;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 }
 .search-bar {
+  position: absolute;
+  top: 11px;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;

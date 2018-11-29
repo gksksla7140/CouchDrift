@@ -8,6 +8,11 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.onLeaving = this.onLeaving.bind(this);
+    this.state = {
+      inputVal: '',
+    };
+
+    this.handleInput = this.handleInput.bind(this);
 
   }
 
@@ -20,25 +25,24 @@ class Header extends React.Component {
     );
   }
 
+  handleInput(event) {
+    this.setState({ inputVal: event.currentTarget.value });
+  }
+
   onLeaving() {
     if (this.props.toggled) {
       this.props.toggle();
     }
   }
 
+
   loggedIn() {
     return (
       <div className='logged-in-header-container'>
-        <div className='search-bar'>
-          <h2>Search</h2>
-          <input type='text' placeholder='Discover a hosting'></input>
-          <i className="fas fa-search-location"></i>
-        </div>
         <nav className="logged-in-header"
            onMouseLeave={this.onLeaving}
            onClick={this.props.toggle}>
           <div className='profile-icon'></div>
-
           <div className='profile-triangle'>
             <div ></div>
             <a ><i className="fas fa-caret-down"></i></a>
