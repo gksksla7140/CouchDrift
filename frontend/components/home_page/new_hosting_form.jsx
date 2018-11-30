@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { RadioGroup, Radio } from 'react-radio-group';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 class NewHostingForm extends React.Component {
   constructor(props) {
     super(props);
@@ -25,17 +26,43 @@ class NewHostingForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.geoCode = this.geoCode.bind(this);
     this.update = this.update.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   update(field) {
+
     return (e) => {
-      if (e.target.type === 'checkbox') {
-        this.setState({ [field]: e.target.checked });
+    
+      if (e.type !== undefined) {
+        if (e.target.type === 'checkbox') {
+          this.setState({ [field]: e.target.checked });
+        } else {
+          this.setState({ [field]: e.target.value });
+        }
       } else {
-        this.setState({ [field]: e.target.value });
+        this.setState({[field]: e});
+        console.log(this.state.address);
       }
     };
   }
+  handleCloseClick = () => {
+    this.setState({
+      address: '',
+      long: null,
+      lat: null,
+    });
+  };
+  handleSelect=(suggestion) =>{
+    this.setState({ address: suggestion.description });
+  };
+  handleChange = address => {
+    this.setState({
+      address,
+      latitude: null,
+      longitude: null,
+      errorMessage: '',
+    });
+  };
 
   geoCode(address) {
 
@@ -47,11 +74,7 @@ class NewHostingForm extends React.Component {
         })
         .then((response) => {
           const position = response.data.results[0].geometry.location;
-
-          console.log(position);
           this.setState({ long: position.lng, lat: position.lat });
-
-          // this.setState({ [lat]: parseInt(position.lat) });
         }).then(() =>
         this.props.createHosting(this.state)
       ).then(() => {
@@ -65,14 +88,97 @@ class NewHostingForm extends React.Component {
   }
 
   render() {
+    // ##################################################################
+    // Auto complete address is from react-places-autocomplete demo !!!
+   // ##################################################################
+
+    const isObject = val => {
+      return typeof val === 'object' && val !== null;
+    };
+    const classnames = (...args) => {
+      const classes = [];
+      args.forEach(arg => {
+        if (typeof arg === 'string') {
+          classes.push(arg);
+        } else if (isObject(arg)) {
+          Object.keys(arg).forEach(key => {
+            if (arg[key]) {
+              classes.push(key);
+            }
+          });
+        } else {
+          throw new Error(
+            '`classnames` only accepts string or object as arguments'
+          );
+        }
+      });
+
+      return classes.join(' ');
+    };
+    let address = this.state.address;
     return (
       <div className='new-form-container'>
         <h1>Create New Hosting</h1>
       <form onSubmit={this.handleSubmit} className='hosting-form'>
         <label>
-          <input type='text' className='address-input'
+          {/* <input type='text' className='address-input'
             name='hosting[address]'
-            placeholder='address' onChange={this.update('address')} value={this.state.address}></input>
+            placeholder='address' onChange={this.update('address')} value={this.state.address}></input> */}
+            
+            <PlacesAutocomplete
+              onChange={this.handleChange}
+              value={address}
+              onSelect={this.handleSelect}
+              onError={this.handleError}
+              shouldFetchSuggestions={address.length > 2}
+            >
+              {({ getInputProps, suggestions, getSuggestionItemProps }) => {
+                return (
+                  <div className="Demo__search-bar-container">
+                    <div className="Demo__search-input-container">
+                      <input
+                        {...getInputProps({
+                          placeholder: 'Search Places...',
+                          className: 'Demo__search-input',
+                        })}
+                      />
+                      {this.state.address.length > 0 && (
+                        <button
+                          className="Demo__clear-button"
+                          onClick={this.handleCloseClick}
+                        >
+                          x
+                    </button>
+                      )}
+                    </div>
+                    {suggestions.length > 0 && (
+                      <div className="Demo__autocomplete-container">
+                        {suggestions.map(suggestion => {
+                          const className = classnames('Demo__suggestion-item', {
+                            'Demo__suggestion-item--active': suggestion.active,
+                          });
+
+                          return (
+                            /* eslint-disable react/jsx-key */
+                            <div
+                              {...getSuggestionItemProps(suggestion, { className })}
+                            >
+                              <strong>
+                                {suggestion.formattedSuggestion.mainText}
+                              </strong>{' '}
+                              <small>
+                                {suggestion.formattedSuggestion.secondaryText}
+                              </small>
+                            </div>
+                          );
+                          /* eslint-enable react/jsx-key */
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              }}
+            </PlacesAutocomplete>
         </label>
         <label id='description-text'>
           <textarea onChange={this.update('description')}
