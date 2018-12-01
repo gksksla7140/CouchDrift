@@ -11,8 +11,21 @@ import { fetchHostings } from './actions/hosting_action';
 import axios from 'axios';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store;
   let user = { email: 'demo@demo', password: 'starwars' };
+  if (window.currentUser) {
+    const preloadedState = {
+      session: { id: window.currentUser.id },
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+    
   window.login = login;
   window.deleteErrors = deletErrors;
   window.toggleDropDown = toggleDropDown;
